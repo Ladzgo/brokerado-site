@@ -3,215 +3,380 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brókeradó – külföldi bróker szja-bevallás percek alatt</title>
+    <title>Brókeradó – szja-bevallás külföldi brókeres befektetésekről</title>
     <meta
       name="description"
-      content="Interactive Brokers, Revolut vagy Trading 212 kimutatásból kiszámolja, mit kell beírnod az szja-bevallásba. Napi MNB-árfolyam, FIFO, osztalék, kamat. A fájlod nem hagyja el a gépedet."
+      content="Interactive Brokers, Trading 212 vagy Revolut kimutatásból kiszámolja, mit kell beírnod az szja-bevallásba. Napi MNB-árfolyam, FIFO, osztalék, kamat. A fájlod nem hagyja el a gépedet."
     />
-    <meta property="og:title" content="Brókeradó – külföldi bróker szja-bevallás percek alatt" />
-    <meta property="og:description" content="Töltsd be a brókered éves kimutatását, és megkapod a bevallás sorait. Minden számítás a böngésződben fut." />
+    <meta property="og:title" content="Brókeradó – a külföldi bróker nem számolja ki a magyar adódat" />
+    <meta property="og:description" content="Behúzod a bróker éves kimutatását, és megkapod a bevallás sorait. Minden a böngésződben fut, feltöltés nélkül." />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#0b6b52" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b6b52'/%3E%3Cpath d='M9 22V10h7.5a4 4 0 0 1 0 8H9m7.5 0 5 4' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
-    <script type="module" crossorigin src="./assets/main-CGHMPjUC.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/style-DZf1pcr6.css">
+    <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121317" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a1c22'/%3E%3Cpath d='M9 8v16M9 8h7a4 4 0 0 1 0 8H9h8a4 4 0 0 1 0 8H9' stroke='%23f4f0e6' stroke-width='2.6' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M22 24h4' stroke='%23e0583d' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <script type="module" crossorigin src="./assets/main-Bn46tA7g.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/style-DjPH11_Q.css">
   </head>
   <body>
-    <header class="topbar">
-      <div class="wrap topbar-inner">
-        <a class="brand" href="./">
-          <span class="brand-mark" aria-hidden="true">B</span>
+    <a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="./" aria-label="Brókeradó, főoldal">
+          <span class="wordmark-mark" aria-hidden="true"></span>
           Brókeradó
         </a>
-        <a class="topbar-cta" href="#varolista">Várólista</a>
+        <nav class="site-nav" aria-label="Fő navigáció">
+          <a href="#hogyan">Hogyan működik</a>
+          <a href="#adatvedelem">Adatvédelem</a>
+          <a href="#mit-szamol">Mit számol</a>
+          <a href="#ar">Ár</a>
+          <a href="#gyik">Kérdések</a>
+        </nav>
+        <a class="btn btn-small" href="#varolista">Feliratkozom</a>
       </div>
     </header>
 
-    <main>
+    <main id="tartalom">
+      <!-- ============ HERO ============ -->
       <section class="hero">
         <div class="wrap hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">A 2026-os adóév bevallásához · határidő: 2027. május 20.</p>
-            <h1>Külföldi brókered van? Az szja-bevallásod percek alatt kész.</h1>
+            <p class="kicker"><span class="dot" aria-hidden="true"></span>Szja 2026 · bevallási határidő: 2027. május 20.</p>
+            <h1>A külföldi bróker nem számolja ki a&nbsp;magyar adódat. <span class="accent">A&nbsp;Brókeradó igen.</span></h1>
             <p class="lead">
-              Töltsd be az <strong>Interactive Brokers</strong>, <strong>Revolut</strong> vagy <strong>Trading 212</strong> éves
-              kimutatásodat, és megmutatjuk, pontosan mit kell beírnod a bevallásba. Minden tételt a napi MNB-árfolyamon
-              számolunk át.
+              Behúzod az Interactive Brokers, Trading 212 vagy Revolut éves kimutatását, és megkapod, mit írj az
+              szja-bevallásba. Minden tétel a saját napi MNB-árfolyamán, FIFO szerint párosítva, a böngésződben számolva.
             </p>
-            <p class="privacy-badge">
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5l-8-3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              A fájlod nem hagyja el a gépedet: minden számítás a böngésződben történik.
-            </p>
-            <a class="button button-primary" href="#varolista">Feliratkozom a várólistára</a>
+
+            <form class="signup signup-inline" data-waitlist data-followup novalidate>
+              <div class="signup-row">
+                <label class="visually-hidden" for="hero-email">E-mail-cím</label>
+                <input id="hero-email" type="email" name="email" autocomplete="email" required placeholder="E-mail-címed" />
+                <button class="btn" type="submit">Szólj, ha indul</button>
+              </div>
+              <label class="consent">
+                <input type="checkbox" name="consent" required />
+                <span>Kérek egy e-mailt az induláskor. <a href="./adatkezeles.html">Adatkezelés</a></span>
+              </label>
+              <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <p class="form-status" role="status" aria-live="polite"></p>
+              <div class="followup" hidden>
+                <p class="followup-q">Melyik brókert használod? Ez alapján döntjük el, mit támogassunk először.</p>
+                <div class="chips">
+                  <label><input type="checkbox" name="broker" value="ibkr" />Interactive Brokers</label>
+                  <label><input type="checkbox" name="broker" value="revolut" />Revolut</label>
+                  <label><input type="checkbox" name="broker" value="trading212" />Trading 212</label>
+                  <label><input type="checkbox" name="broker" value="lightyear" />Lightyear</label>
+                  <label><input type="checkbox" name="broker" value="xtb" />XTB</label>
+                  <label><input type="checkbox" name="broker" value="other" />Más</label>
+                </div>
+                <button class="btn btn-ghost followup-send" type="button">Elküldöm</button>
+              </div>
+            </form>
+            <p class="hero-note">Ingyenes feliratkozás. Indulás 2027 januárjában, a várólistán lévőknek kedvezményes áron.</p>
           </div>
 
-          <figure class="result-card" aria-label="Példa egy összesítőre, kitalált adatokkal">
-            <figcaption>
-              <span>Összesítő · 2026</span>
-              <span class="tag">Példa, kitalált adatok</span>
-            </figcaption>
-            <dl>
-              <div><dt>Eladások (7 db, 3 bróker)</dt><dd class="neg">−389 433 Ft</dd></div>
-              <div><dt>Osztalék, bruttó</dt><dd>18 013 Ft</dd></div>
-              <div><dt>Külföldön levont adó</dt><dd>2 203 Ft</dd></div>
-              <div><dt>Kamat</dt><dd>16 700 Ft</dd></div>
-              <div class="sep"><dt>Szja</dt><dd>4 185 Ft</dd></div>
-              <div><dt>Szocho</dt><dd>4 513 Ft</dd></div>
-              <div class="total"><dt>Fizetendő</dt><dd>8 698 Ft</dd></div>
-            </dl>
-            <p class="result-foot">+ részletes PDF minden tétellel, árfolyammal és FIFO-párosítással</p>
+          <!-- Ledger: shows what the product actually does, one transaction at a time. -->
+          <figure class="ledger" aria-label="Példa: így lesz egy tételből bevallási adat (kitalált adatok)">
+            <div class="ledger-head">
+              <span class="ledger-title">Főkönyvi lap</span>
+              <span class="ledger-tag">példa, kitalált adatokkal</span>
+            </div>
+            <div class="tabs" role="tablist" aria-label="Példa tétel típusa">
+              <button role="tab" id="tab-sale" aria-controls="panel-sale" aria-selected="true">Eladás</button>
+              <button role="tab" id="tab-div" aria-controls="panel-div" aria-selected="false" tabindex="-1">Osztalék</button>
+              <button role="tab" id="tab-int" aria-controls="panel-int" aria-selected="false" tabindex="-1">Kamat</button>
+            </div>
+
+            <div class="ledger-panel" role="tabpanel" id="panel-sale" aria-labelledby="tab-sale">
+              <p class="ledger-source">Interactive Brokers · Activity Statement</p>
+              <dl class="rows">
+                <div><dt>AAPL eladás, 2026. 03. 16.</dt><dd>7 db × 255,55 USD</dd></div>
+                <div><dt>Bevétel, jutalék levonva</dt><dd>1 787,85 USD</dd></div>
+                <div><dt>MNB-árfolyam aznap</dt><dd>× 342,07</dd></div>
+                <div class="strong"><dt>Bevétel forintban</dt><dd>611 569,85 Ft</dd></div>
+                <div class="group"><dt>Bekerülési érték, FIFO szerint</dt><dd></dd></div>
+                <div class="sub"><dt>2025. 01. 15. vétel · 2 db</dt><dd>189 249,58 Ft</dd></div>
+                <div class="sub"><dt>2025. 06. 03. vétel · 5 db</dt><dd>387 582,92 Ft</dd></div>
+                <div class="total"><dt>Árfolyamnyereség</dt><dd class="pos">+34 737,35 Ft</dd></div>
+              </dl>
+              <p class="ledger-dest">→ a tőkepiaci ügyletek éves eredményébe</p>
+            </div>
+
+            <div class="ledger-panel" role="tabpanel" id="panel-div" aria-labelledby="tab-div" hidden>
+              <p class="ledger-source">Interactive Brokers · Dividends</p>
+              <dl class="rows">
+                <div><dt>MSFT osztalék, 2026. 03. 12.</dt><dd>60 db × 0,83 USD</dd></div>
+                <div><dt>Bruttó osztalék</dt><dd>49,80 USD</dd></div>
+                <div><dt>Levont amerikai forrásadó, 30%</dt><dd>14,94 USD</dd></div>
+                <div><dt>MNB-árfolyam aznap</dt><dd>× 335,25</dd></div>
+                <div class="strong"><dt>Bruttó osztalék forintban</dt><dd>16 695,45 Ft</dd></div>
+                <div class="total"><dt>Külföldön levont adó forintban</dt><dd>5 008,64 Ft</dd></div>
+              </dl>
+              <p class="ledger-dest">→ az osztalék soraiba, a külföldi adó beszámításával</p>
+            </div>
+
+            <div class="ledger-panel" role="tabpanel" id="panel-int" aria-labelledby="tab-int" hidden>
+              <p class="ledger-source">Interactive Brokers · Interest</p>
+              <dl class="rows">
+                <div><dt>EUR kamat, 2026. 06. 03.</dt><dd>18,40 EUR</dd></div>
+                <div><dt>MNB-árfolyam aznap</dt><dd>× 355,76</dd></div>
+                <div class="strong"><dt>Kamat forintban</dt><dd>6 545,98 Ft</dd></div>
+                <div><dt>Szja, 15%</dt><dd>981,90 Ft</dd></div>
+                <div class="total"><dt>Szocho, 13%</dt><dd>850,98 Ft</dd></div>
+              </dl>
+              <p class="ledger-dest">→ a kamatjövedelem soraiba</p>
+            </div>
           </figure>
         </div>
       </section>
 
-      <section class="section problem">
-        <div class="wrap">
-          <h2>Miért nem elég a bróker kimutatása?</h2>
-          <div class="cards three">
-            <article class="card">
-              <h3>Forintban kell bevallani</h3>
-              <p>Minden vételt, eladást, osztalékot és kamatot a saját napjának MNB-árfolyamán kell átszámolnod. Évi száz tétel, száz árfolyam.</p>
-            </article>
-            <article class="card">
-              <h3>A külföldi bróker nem csinálja meg</h3>
-              <p>Nem von le magyar adót, és nem készít magyar szabályok szerinti kimutatást. A bevallás a te feladatod.</p>
-            </article>
-            <article class="card">
-              <h3>A NAV is látja</h3>
-              <p>A külföldi adóhatóságok adatot küldenek a NAV-nak. Ha valami kimarad, a hiány 50%-a bírság plusz késedelmi pótlék.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section how">
-        <div class="wrap">
-          <h2>Így működik</h2>
-          <ol class="steps">
-            <li>
-              <span class="step-num">1</span>
-              <h3>Töltsd le a kimutatást</h3>
-              <p>Az éves CSV-t a brókered felületéről. Megmutatjuk, hol találod.</p>
-            </li>
-            <li>
-              <span class="step-num">2</span>
-              <h3>Húzd be az oldalra</h3>
-              <p>A számítás a böngésződben fut, semmit nem töltünk fel. Több bróker és több év egyszerre is mehet.</p>
-            </li>
-            <li>
-              <span class="step-num">3</span>
-              <h3>Írd be a bevallásba</h3>
-              <p>Megkapod a bevallás sorait, és egy PDF-et minden tétellel arra az esetre, ha a NAV kérdezne.</p>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="section features">
-        <div class="wrap">
-          <h2>Mit számol ki?</h2>
-          <ul class="checklist">
-            <li><strong>Árfolyamnyereség és -veszteség</strong> a FIFO-elv szerint, a vétel és az eladás napi árfolyamán, díjakkal együtt</li>
-            <li><strong>Osztalék</strong> a külföldön levont forrásadó beszámításával</li>
-            <li><strong>Kamat</strong> és a <strong>szocho éves felső határa</strong></li>
-            <li><strong>Korábbi években vett részvények</strong> eladása: töltsd be a régebbi kimutatásokat is</li>
-            <li><strong>Figyelmeztet</strong>, ha valami hiányzik, például egy eladásnál nincs meg a vétel</li>
+      <!-- ============ SUPPORTED BROKERS ============ -->
+      <section class="brokers" aria-label="Támogatott brókerek">
+        <div class="wrap brokers-inner">
+          <span class="label">Ezeket a kimutatásokat olvassa</span>
+          <ul>
+            <li>Interactive Brokers</li>
+            <li>Trading 212</li>
+            <li>Revolut</li>
           </ul>
+          <span class="soon">Tervben: Lightyear, XTB</span>
         </div>
       </section>
 
-      <section class="section waitlist" id="varolista">
-        <div class="wrap narrow">
-          <h2>Iratkozz fel, és szólunk, amikor indul</h2>
-          <p class="section-lead">
-            Indulás 2027 januárjában. A várólistán lévők <strong>kedvezményes induló árat</strong> kapnak.
-          </p>
+      <!-- ============ BEFORE / AFTER ============ -->
+      <section class="section" id="hogyan">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="eyebrow">Hogyan működik</p>
+            <h2>Hét lépés Excelben. Három a&nbsp;Brókeradóval.</h2>
+          </header>
 
-          <form id="waitlist-form" class="form" novalidate>
-            <label class="field">
-              <span>E-mail-cím</span>
-              <input type="email" name="email" autocomplete="email" required placeholder="nev@example.com" />
-            </label>
-
-            <fieldset class="field">
-              <legend>Melyik brókert használod? <span class="optional">(nem kötelező)</span></legend>
-              <div class="chips">
-                <label><input type="checkbox" name="broker" value="ibkr" /> Interactive Brokers</label>
-                <label><input type="checkbox" name="broker" value="revolut" /> Revolut</label>
-                <label><input type="checkbox" name="broker" value="trading212" /> Trading 212</label>
-                <label><input type="checkbox" name="broker" value="lightyear" /> Lightyear</label>
-                <label><input type="checkbox" name="broker" value="xtb" /> XTB</label>
-                <label><input type="checkbox" name="broker" value="other" /> Más</label>
-              </div>
-            </fieldset>
-
-            <label class="consent">
-              <input type="checkbox" name="consent" required />
-              <span>
-                Hozzájárulok, hogy az induláskor e-mailt kapjak a Brókeradótól. Bármikor leiratkozhatok.
-                <a href="./adatkezeles.html">Adatkezelési tájékoztató</a>
-              </span>
-            </label>
-
-            <!-- Honeypot: bots fill it, people never see it. -->
-            <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
-
-            <button class="button button-primary" type="submit">Feliratkozom</button>
-            <p class="form-status" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-      </section>
-
-      <section class="section pricing">
-        <div class="wrap narrow">
-          <h2>Mennyibe kerül?</h2>
-          <div class="price-grid">
-            <div class="price-box">
-              <h3>Ingyenes</h3>
-              <p class="price">0 Ft</p>
-              <p>Kimutatás betöltése, teljes számítás, összesítő a képernyőn.</p>
+          <div class="compare">
+            <div class="compare-col compare-old">
+              <h3>Kézzel, táblázatban</h3>
+              <ol>
+                <li>Letöltöd a bróker éves kimutatását</li>
+                <li>Kikeresed az MNB-árfolyamot minden vétel, eladás, osztalék és kamat napjára</li>
+                <li>Minden sort átváltasz forintra</li>
+                <li>Az eladásokat párosítod a korábbi vételekkel, FIFO szerint, évekre visszamenőleg</li>
+                <li>Az osztalékokat párosítod a levont forrásadóval</li>
+                <li>Kiszámolod a szochót a felső határig</li>
+                <li>Kikeresed, melyik összeg a bevallás melyik sorába kerül</li>
+              </ol>
             </div>
-            <div class="price-box featured">
-              <h3>Bevallás csomag</h3>
-              <p class="price">várhatóan 7 990 Ft <span>/ adóév</span></p>
-              <p>A bevallás sorai pontosan, és részletes PDF- és CSV-jelentés minden tétellel.</p>
+            <div class="compare-col compare-new">
+              <h3>A Brókeradóval</h3>
+              <ol>
+                <li><strong>Letöltöd a kimutatást.</strong> Megmutatjuk, hol találod az adott brókernél.</li>
+                <li><strong>Behúzod az oldalra.</strong> Több bróker és több év egyszerre is mehet.</li>
+                <li><strong>Beírod a sorokat a bevallásba.</strong> A részletes PDF-et pedig elteszed, ha a NAV kérdezne.</li>
+              </ol>
+              <div class="mini-result" aria-label="Példa összesítő, kitalált adatokkal">
+                <p class="mini-title">Összesítő · 2026 <span>példa</span></p>
+                <dl class="rows">
+                  <div><dt>Eladások, 3 bróker, 7 tétel</dt><dd class="neg">−389 433 Ft</dd></div>
+                  <div><dt>Szja</dt><dd>4 185 Ft</dd></div>
+                  <div><dt>Szocho</dt><dd>4 513 Ft</dd></div>
+                  <div class="total"><dt>Fizetendő</dt><dd>8 698 Ft</dd></div>
+                </dl>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section faq">
-        <div class="wrap narrow">
-          <h2>Gyakori kérdések</h2>
-          <details>
-            <summary>Feltöltöd valahová a fájlomat?</summary>
-            <p>Nem. Az oldal a böngésződben számol, a fájl nem kerül semmilyen szerverre. Betöltés után internet nélkül is működik.</p>
-          </details>
-          <details>
-            <summary>Milyen brókereket támogat?</summary>
-            <p>Induláskor az Interactive Brokers, a Trading 212 és a Revolut kimutatásait. A várólistán jelezd, mit használsz: ez alapján bővítünk.</p>
-          </details>
-          <details>
-            <summary>Ez adótanácsadás?</summary>
-            <p>Nem. A Brókeradó számítási segédeszköz, a bevallásért te felelsz. A számítási szabályokat az indulás előtt adótanácsadóval ellenőriztetjük, és minden szabálynál feltüntetjük a jogszabályi forrást.</p>
-          </details>
-          <details>
-            <summary>Mi a helyzet a TBSZ-szel és a kriptóval?</summary>
-            <p>A magyar bankoknál vezetett TBSZ adóját a bank kezeli, ahhoz nincs szükség a Brókeradóra. Kriptót egyelőre nem számolunk.</p>
-          </details>
-          <details>
-            <summary>Honnan veszitek az árfolyamokat?</summary>
-            <p>A Magyar Nemzeti Bank hivatalos napi árfolyamaiból. Ha egy napon nincs jegyzés (hétvége, ünnep), az előtte utolsó közzétett árfolyamot használjuk.</p>
-          </details>
+      <!-- ============ PRIVACY ============ -->
+      <section class="section section-dark" id="adatvedelem">
+        <div class="wrap privacy-grid">
+          <div>
+            <p class="eyebrow">Adatvédelem</p>
+            <h2>A fájlod a gépeden marad.</h2>
+            <p>
+              A Brókeradó a böngésződben számol. A kimutatásod nem kerül fel szerverre: nincs fiók, nincs adatbázis, nincs
+              mit kiszivárogtatni.
+            </p>
+            <p class="muted">
+              Ellenőrizheted is: nyisd meg a böngésző fejlesztői eszközeit (F12), és a Hálózat fülön látni fogod, hogy a
+              fájlod tartalmából semmi nem megy ki.
+            </p>
+          </div>
+          <div class="flow" aria-hidden="true">
+            <div class="flow-box">
+              <span class="flow-label">A te böngésződ</span>
+              <div class="flow-steps">
+                <span>kimutatás.csv</span>
+                <span class="arrow">→</span>
+                <span>számítás</span>
+                <span class="arrow">→</span>
+                <span>eredmény</span>
+              </div>
+            </div>
+            <div class="flow-cut">
+              <span class="flow-line"></span>
+              <span class="flow-zero">0 bájt a fájlodból</span>
+            </div>
+            <div class="flow-box flow-server">
+              <span class="flow-label">Szerver</span>
+              <span class="flow-empty">nem kap semmit</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SPEC SHEET ============ -->
+      <section class="section" id="mit-szamol">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="eyebrow">Mit számol</p>
+            <h2>Minden, ami a külföldi brókeres bevalláshoz kell.</h2>
+          </header>
+          <dl class="spec">
+            <div>
+              <dt>Árfolyamnyereség</dt>
+              <dd>Az eladásokat FIFO szerint párosítja a korábbi vételekkel, évekre visszamenőleg és brókerenként. A vétel és az eladás a saját napi MNB-árfolyamán, jutalékkal együtt.</dd>
+            </div>
+            <div>
+              <dt>Osztalék</dt>
+              <dd>Bruttó osztalék és a külföldön levont forrásadó forintban, a beszámítással.</dd>
+            </div>
+            <div>
+              <dt>Kamat</dt>
+              <dd>A brókernél tartott készpénz kamata, szja-val és szochóval.</dd>
+            </div>
+            <div>
+              <dt>Szocho felső határa</dt>
+              <dd>Ha megadod az éves munkabéredet, figyelembe veszi az éves plafont.</dd>
+            </div>
+            <div>
+              <dt>Több bróker, több év</dt>
+              <dd>Egyszerre több kimutatást is betölthetsz, így a régebben vett részvények eladása is pontos.</dd>
+            </div>
+            <div>
+              <dt>Figyelmeztetések</dt>
+              <dd>Szól, ha egy eladáshoz hiányzik a vétel, ha egy napra nincs árfolyam, vagy ha a kimutatásból adat hiányzik.</dd>
+            </div>
+            <div>
+              <dt>Jelentés</dt>
+              <dd>PDF és CSV minden tétellel, árfolyammal és párosítással, arra az esetre, ha a NAV kérdezne.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============ PRICING ============ -->
+      <section class="section section-alt" id="ar">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="eyebrow">Ár</p>
+            <h2>Kiszámolni ingyenes. A bevallás sorai egy adóévre egyszer fizetendők.</h2>
+          </header>
+          <div class="pricing">
+            <article class="plan">
+              <h3>Ingyenes</h3>
+              <p class="plan-price">0 Ft</p>
+              <ul>
+                <li>Kimutatások betöltése</li>
+                <li>Teljes számítás</li>
+                <li>Összesítő a képernyőn</li>
+              </ul>
+            </article>
+            <article class="plan plan-main">
+              <h3>Bevallás csomag</h3>
+              <p class="plan-price">7 990 Ft <span>/ adóév, várhatóan</span></p>
+              <ul>
+                <li>A bevallás sorai, pontos összegekkel</li>
+                <li>Részletes PDF- és CSV-jelentés</li>
+                <li>Az összes betöltött bróker és év</li>
+              </ul>
+              <p class="plan-note">A várólistán lévők kedvezményes induló árat kapnak.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FAQ ============ -->
+      <section class="section" id="gyik">
+        <div class="wrap faq-grid">
+          <header class="faq-head">
+            <p class="eyebrow">Kérdések</p>
+            <h2>Gyakori kérdések</h2>
+            <p class="muted">Más kérdésed van? Írj: <a href="mailto:lszeles04@gmail.com">lszeles04@gmail.com</a></p>
+          </header>
+          <div class="faq">
+            <details>
+              <summary>Feltöltöd valahová a fájlomat?</summary>
+              <p>Nem. Az oldal a böngésződben számol, a fájl nem kerül semmilyen szerverre. Betöltés után internet nélkül is működik.</p>
+            </details>
+            <details>
+              <summary>Milyen brókereket támogat?</summary>
+              <p>Induláskor az Interactive Brokers, a Trading 212 és a Revolut kimutatásait. Feliratkozáskor jelezd, mit használsz: ez alapján bővítünk.</p>
+            </details>
+            <details>
+              <summary>Ez adótanácsadás?</summary>
+              <p>Nem. A Brókeradó számítási segédeszköz, a bevallásért te felelsz. A számítási szabályokat az indulás előtt adótanácsadóval ellenőriztetjük, és minden szabálynál feltüntetjük a jogszabályi forrást.</p>
+            </details>
+            <details>
+              <summary>Honnan veszitek az árfolyamokat?</summary>
+              <p>A Magyar Nemzeti Bank hivatalos napi árfolyamaiból. Ha egy napon nincs jegyzés (hétvége, ünnep), az előtte utolsó közzétett árfolyamot használjuk.</p>
+            </details>
+            <details>
+              <summary>Mi a helyzet a TBSZ-szel és a kriptóval?</summary>
+              <p>A magyar bankoknál vezetett TBSZ adóját a bank kezeli, ahhoz nincs szükség a Brókeradóra. Kriptót egyelőre nem számolunk.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WAITLIST ============ -->
+      <section class="section waitlist" id="varolista">
+        <div class="wrap">
+          <div class="waitlist-sheet">
+            <div class="waitlist-copy">
+              <p class="eyebrow">Várólista</p>
+              <h2>Szólunk, amikor indul.</h2>
+              <p>2027 januárjában indulunk, a 2026-os adóév bevallásához. A várólistán lévők kedvezményes induló árat kapnak.</p>
+            </div>
+            <form class="signup" data-waitlist novalidate>
+              <label class="field">
+                <span>E-mail-cím</span>
+                <input type="email" name="email" autocomplete="email" required placeholder="nev@example.com" />
+              </label>
+              <fieldset class="field">
+                <legend>Melyik brókert használod? <span class="optional">nem kötelező</span></legend>
+                <div class="chips">
+                  <label><input type="checkbox" name="broker" value="ibkr" />Interactive Brokers</label>
+                  <label><input type="checkbox" name="broker" value="revolut" />Revolut</label>
+                  <label><input type="checkbox" name="broker" value="trading212" />Trading 212</label>
+                  <label><input type="checkbox" name="broker" value="lightyear" />Lightyear</label>
+                  <label><input type="checkbox" name="broker" value="xtb" />XTB</label>
+                  <label><input type="checkbox" name="broker" value="other" />Más</label>
+                </div>
+              </fieldset>
+              <label class="consent">
+                <input type="checkbox" name="consent" required />
+                <span>Hozzájárulok, hogy az induláskor e-mailt kapjak a Brókeradótól. Bármikor leiratkozhatok. <a href="./adatkezeles.html">Adatkezelési tájékoztató</a></span>
+              </label>
+              <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <button class="btn btn-block" type="submit">Feliratkozom</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="site-footer">
       <div class="wrap footer-inner">
-        <span>© 2026 Brókeradó</span>
-        <a href="./adatkezeles.html">Adatkezelési tájékoztató</a>
-        <span>Számítási segédeszköz, nem adótanácsadás.</span>
+        <a class="wordmark wordmark-small" href="./"><span class="wordmark-mark" aria-hidden="true"></span>Brókeradó</a>
+        <nav aria-label="Lábléc">
+          <a href="#hogyan">Hogyan működik</a>
+          <a href="#ar">Ár</a>
+          <a href="./adatkezeles.html">Adatkezelési tájékoztató</a>
+          <a href="mailto:lszeles04@gmail.com">Kapcsolat</a>
+        </nav>
+        <p class="footer-note">Számítási segédeszköz, nem adótanácsadás. © 2026 Brókeradó</p>
       </div>
     </footer>
 
